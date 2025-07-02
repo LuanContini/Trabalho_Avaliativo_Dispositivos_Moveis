@@ -1,11 +1,13 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function GastoCard({ descricao, valor, categoria }) {
+export default function GastoCard({ descricao, valor, categoria, valorStyle }) {
   return (
     <View style={styles.card}>
       <Text style={styles.descricao}>{descricao}</Text>
       <Text style={styles.categoria}>{categoria}</Text>
-      <Text style={styles.valor}>R$ {Number(valor).toFixed(2)}</Text>
+      <Text style={[styles.valor, valorStyle]}>
+        R$ {Number(valor).toFixed(2)}
+      </Text>
     </View>
   );
 }

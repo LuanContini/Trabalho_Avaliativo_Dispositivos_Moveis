@@ -4,9 +4,6 @@ import 'dotenv/config';
 import { Client } from 'pg';
 import pool from './config/db.js';
 
-// Conexão com o banco de dados PostgreSQL
-
-
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -17,6 +14,8 @@ app.get('/gastos', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM gestor.gastos');
     res.json(result.rows);
+    console.log('Gastos retornados com sucesso');
+    
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -25,6 +24,7 @@ app.get('/gastos', async (req, res) => {
 // POST: Criar um novo gasto
 app.post('/gastos', async (req, res) => {
   const { valor, descricao, categoria } = req.body;
+  console.log(req.body);
   try {
     const result = await pool.query(
       'INSERT INTO gestor.gastos (valor, descricao, categoria) VALUES ($1, $2, $3) RETURNING *',
