@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, View, StyleSheet, Dimensions, Text } from "react-native";
 import { PieChart } from "react-native-chart-kit";
 import * as Progress from "react-native-progress";
-import { API_URL } from "@env";
 import { useFocusEffect } from "@react-navigation/native";
 
 import ResumoFinanceiro from "../components/resumoFinanceiroComponent";
+
+
+const API_URL = 'https://trabalho-avaliativo-dispositivos-moveis.onrender.com';
 
 export default function ResumoScreen() {
   const [gastos, setGastos] = useState([]);

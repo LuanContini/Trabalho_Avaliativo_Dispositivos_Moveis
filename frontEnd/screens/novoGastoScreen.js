@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { View, StyleSheet, Alert } from "react-native";
-import { API_URL } from "@env";
 
 import CustomInput from "../components/inputPersonalizadoComponent";
 import CustomButton from "../components/botaoCustomizadoComponent";
 import { useNavigation } from "@react-navigation/native";
+
+
+const API_URL = 'https://trabalho-avaliativo-dispositivos-moveis.onrender.com';
 
 export default function NovoGastoScreen() {
   const [descricao, setDescricao] = useState("");
