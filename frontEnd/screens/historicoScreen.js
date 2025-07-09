@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, ScrollView, View, Text } from "react-native";
-import { API_URL } from "@env";
 import { useFocusEffect } from "@react-navigation/native";
 
 import GastoCard from "../components/cardGastosComponent";
+
+const API_URL = 'https://trabalho-avaliativo-dispositivos-moveis.onrender.com';
 
 function capitalizeWords(str) {
   return str
